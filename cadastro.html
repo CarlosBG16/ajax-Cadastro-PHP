@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX LOGIN - PHP</title>
+
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="materialize/css/materialize.min.css">
+
+</head>
+
+<style type="text/css">
+
+.row:not(body) {
+padding:8px !important;
+}
+
+
+.formulario {
+margin:8px;
+margin-top:12px;
+}
+
+
+#info1 , #info2 {
+margin:9px ! important;
+color:red ! important;
+}
+
+
+.erro {
+border-bottom-color:red !important;
+}
+
+.msg1 , .msg2 , #sucesso , #loading  {
+display:none;
+}
+
+</style>
+
+
+<body class="row" >
+
+<header style="padding:20px !important"  class="col s12 m12 l12 row blue white-text" >
+
+<div class="col m10 s8" >
+<b>AJAX-PHP</b>
+</div>
+
+<div class="col m2 s4 " >
+<b>by: BG16</b>
+</div>
+
+</header>
+
+
+<div class="col s12 m6 l8">
+
+
+
+<form action="#" method="POST" onsubmit="return false;">
+
+<div id="sucesso"  class="chip white green-text"><b class="fa fa-check"></b>  Adicionado com sucesso</div>
+
+<div id="loading"  class="chip white blue-text"> <img src="loader2.gif" width="30%"  /> Criando conta</div>
+
+
+<div class="input-field col s12 m12" >
+
+  <input required="required"  onkeyup="validate(this.value,1,'nome')" autocomplete="off"  onblur="verifica(this.value,1)"  id="nome"  type="text" >
+
+  <label class="blue-text"  for="nome"><i class="fa fa-user"></i> utilizador</label>
+ 
+  <b class="msg1 red-text chip "><b id="icon1"  class="fa fa-info-circle"></b>  este nome já existe</b>
+  
+  <b id="info1" class="red-text"> </b>
+    
+</div>
+
+
+<div class="input-field col s12 m12" >
+
+  <input required="required"  onkeyup="validate(this.value,2,'senha')" autocomplete="off"  onblur="//verifica(this.value,2)" id="senha"  type="password" >
+
+  <label class="blue-text"  for="senha"><i class="fa fa-key"></i> senha</label>
+
+  <b style="margin-bottom:15px"  class="msg2 red-text chip "><b id="icon2" class="fa fa-info-circle"></b>  esta senha já existe</b>
+  
+  <b id="info2" class="red-text"> </b>
+  
+</div>
+
+<div class="col s12 m12" >
+
+<input required="required"  type="date" id="data">
+  
+</div>
+
+
+<div class="col s12 m12" >
+  <button disabled="disabled"  class="btn"> Cadastrar</button>
+</div>
+
+
+
+
+</form>
+
+</div>
+
+
+
+<!-- END -->
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+
+</body>
+</html>
